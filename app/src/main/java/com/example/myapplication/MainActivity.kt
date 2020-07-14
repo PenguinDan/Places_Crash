@@ -12,7 +12,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Places.initialize(application, "PLACE-API-KEY")
+        // NOT NECESSARY TO PLACE API-KEY since it will go to ON_FAIL, crashes regardless
+        // if the api is valid or not
+        Places.initialize(application, "API-KEY")
         val client = Places.createClient(application)
 
         val sessionToken = AutocompleteSessionToken.newInstance()
